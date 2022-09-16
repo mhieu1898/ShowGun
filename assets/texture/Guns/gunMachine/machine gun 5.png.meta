@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "75c577ea-5d6b-4704-a316-53425ecfbb5e",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 671,
+  "height": 325,
+  "platformSettings": {},
+  "subMetas": {
+    "machine gun 5": {
+      "ver": "1.0.4",
+      "uuid": "36096d9e-cb54-47fe-a22f-afb3b7bbdd88",
+      "rawTextureUuid": "75c577ea-5d6b-4704-a316-53425ecfbb5e",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 671,
+      "height": 325,
+      "rawWidth": 671,
+      "rawHeight": 325,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

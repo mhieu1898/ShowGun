@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "9b013681-c7f5-47ee-8cbc-c91687bfbb6e",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 384,
+  "height": 109,
+  "platformSettings": {},
+  "subMetas": {
+    "M05 N1 atlas": {
+      "ver": "1.0.4",
+      "uuid": "3b8639f4-28ad-490b-bc4d-9e17147a11a8",
+      "rawTextureUuid": "9b013681-c7f5-47ee-8cbc-c91687bfbb6e",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -4.5,
+      "offsetY": -7.5,
+      "trimX": 0,
+      "trimY": 24,
+      "width": 375,
+      "height": 76,
+      "rawWidth": 384,
+      "rawHeight": 109,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

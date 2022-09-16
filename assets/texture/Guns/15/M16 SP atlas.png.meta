@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "3eb92b3c-d230-469f-b5b7-37ff93314f39",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 2048,
+  "height": 1024,
+  "platformSettings": {},
+  "subMetas": {
+    "M16 SP atlas": {
+      "ver": "1.0.4",
+      "uuid": "e0e6c394-6d00-4623-9472-cb63f5bda072",
+      "rawTextureUuid": "3eb92b3c-d230-469f-b5b7-37ff93314f39",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -1.5,
+      "offsetY": 15.5,
+      "trimX": 4,
+      "trimY": 0,
+      "width": 2037,
+      "height": 993,
+      "rawWidth": 2048,
+      "rawHeight": 1024,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

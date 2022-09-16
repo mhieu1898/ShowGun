@@ -1,0 +1,47 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "bullet_down2",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 3.0166666666666666,
+  "sample": 60,
+  "speed": 3.5,
+  "wrapMode": 1,
+  "curveData": {
+    "props": {
+      "position": [
+        {
+          "frame": 0,
+          "value": [
+            20,
+            156
+          ],
+          "motionPath": [
+            [
+              -37,
+              187,
+              -16,
+              257,
+              -81,
+              41
+            ]
+          ]
+        },
+        {
+          "frame": 3,
+          "value": [
+            -96,
+            -350
+          ]
+        }
+      ]
+    }
+  },
+  "events": [
+    {
+      "frame": 3.0166666666666666,
+      "func": "destroyItem",
+      "params": []
+    }
+  ]
+}

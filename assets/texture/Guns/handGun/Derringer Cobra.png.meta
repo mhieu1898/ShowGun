@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "9fe3a5d9-76fa-4340-9aa0-73235c7b31c0",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 428,
+  "height": 352,
+  "platformSettings": {},
+  "subMetas": {
+    "Derringer Cobra": {
+      "ver": "1.0.4",
+      "uuid": "5b6836c8-2c2c-44e2-b2d9-a2a47323f07b",
+      "rawTextureUuid": "9fe3a5d9-76fa-4340-9aa0-73235c7b31c0",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0.5,
+      "offsetY": 6,
+      "trimX": 49,
+      "trimY": 9,
+      "width": 331,
+      "height": 322,
+      "rawWidth": 428,
+      "rawHeight": 352,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "2dad9aed-47d3-43fc-a74e-63bdb0538ca1",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 128,
+  "height": 128,
+  "platformSettings": {},
+  "subMetas": {
+    "M16 SP bullet": {
+      "ver": "1.0.4",
+      "uuid": "ae46e12d-2d2a-4dd8-b653-7b64044a7e90",
+      "rawTextureUuid": "2dad9aed-47d3-43fc-a74e-63bdb0538ca1",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 16,
+      "trimY": 55,
+      "width": 96,
+      "height": 18,
+      "rawWidth": 128,
+      "rawHeight": 128,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "bullet_down",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 1,
+  "sample": 60,
+  "speed": 1.5,
+  "wrapMode": 1,
+  "curveData": {
+    "props": {
+      "position": [
+        {
+          "frame": 0,
+          "value": [
+            6,
+            45
+          ],
+          "motionPath": [
+            [
+              -55,
+              133,
+              -19,
+              102,
+              -123,
+              178
+            ],
+            [
+              -207,
+              189,
+              -150,
+              169,
+              -310,
+              211
+            ],
+            [
+              -449,
+              138,
+              -413,
+              210,
+              -553,
+              -11
+            ]
+          ]
+        },
+        {
+          "frame": 1,
+          "value": [
+            -650,
+            -324
+          ],
+          "motionPath": []
+        }
+      ],
+      "angle": [
+        {
+          "frame": 0,
+          "value": -90
+        },
+        {
+          "frame": 0.36666666666666664,
+          "value": -51.324
+        },
+        {
+          "frame": 0.6666666666666666,
+          "value": -69.447
+        },
+        {
+          "frame": 1,
+          "value": -101.49600000000001
+        }
+      ]
+    }
+  },
+  "events": [
+    {
+      "frame": 1,
+      "func": "destroyItem",
+      "params": []
+    }
+  ]
+}

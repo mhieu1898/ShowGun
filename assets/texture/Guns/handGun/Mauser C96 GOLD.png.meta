@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "0419b8d5-a362-42cf-93d0-fd3e01edb1d3",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 439,
+  "height": 341,
+  "platformSettings": {},
+  "subMetas": {
+    "Mauser C96 GOLD": {
+      "ver": "1.0.4",
+      "uuid": "17cb6532-29b0-4341-b501-917f62feefe8",
+      "rawTextureUuid": "0419b8d5-a362-42cf-93d0-fd3e01edb1d3",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 18.5,
+      "offsetY": 0,
+      "trimX": 64,
+      "trimY": 8,
+      "width": 348,
+      "height": 325,
+      "rawWidth": 439,
+      "rawHeight": 341,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

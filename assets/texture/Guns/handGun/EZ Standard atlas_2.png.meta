@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "3ec98d9e-4fa6-4292-b7c1-246f49077199",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 168,
+  "height": 85,
+  "platformSettings": {},
+  "subMetas": {
+    "EZ Standard atlas_2": {
+      "ver": "1.0.4",
+      "uuid": "dd95181f-8cc0-4a84-969e-a24cf67d50d2",
+      "rawTextureUuid": "3ec98d9e-4fa6-4292-b7c1-246f49077199",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -1,
+      "offsetY": 0,
+      "trimX": 1,
+      "trimY": 0,
+      "width": 164,
+      "height": 85,
+      "rawWidth": 168,
+      "rawHeight": 85,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

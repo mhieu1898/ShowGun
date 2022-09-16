@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "e5ff0967-73e6-41d6-ba7e-ffe11e11d00d",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 2048,
+  "height": 1024,
+  "platformSettings": {},
+  "subMetas": {
+    "Bajonet atlas": {
+      "ver": "1.0.4",
+      "uuid": "a90fa0c6-2a46-4e47-a09a-3519bd731512",
+      "rawTextureUuid": "e5ff0967-73e6-41d6-ba7e-ffe11e11d00d",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -170.5,
+      "offsetY": 3.5,
+      "trimX": 0,
+      "trimY": 5,
+      "width": 1707,
+      "height": 1007,
+      "rawWidth": 2048,
+      "rawHeight": 1024,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

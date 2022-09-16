@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "56ba50c4-7ae9-4d9b-9483-26bc00633b79",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 1024,
+  "height": 1024,
+  "platformSettings": {},
+  "subMetas": {
+    "hekler_telo": {
+      "ver": "1.0.4",
+      "uuid": "99dab4b2-87af-4781-8493-65791271d775",
+      "rawTextureUuid": "56ba50c4-7ae9-4d9b-9483-26bc00633b79",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 128,
+      "width": 1024,
+      "height": 768,
+      "rawWidth": 1024,
+      "rawHeight": 1024,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

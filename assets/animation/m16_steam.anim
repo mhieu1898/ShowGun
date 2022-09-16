@@ -1,0 +1,89 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "m16_steam",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.18333333333333332,
+  "sample": 60,
+  "speed": 0.6,
+  "wrapMode": 1,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "edb71d8b-7634-40af-a1f6-1d4caaf1914e"
+            }
+          },
+          {
+            "frame": 0.016666666666666666,
+            "value": {
+              "__uuid__": "b2bd8e4b-14ad-4412-a49c-105e34f9c5b0"
+            }
+          },
+          {
+            "frame": 0.03333333333333333,
+            "value": {
+              "__uuid__": "b9ffbb89-4d2f-46f0-8568-9bb7a1afdd58"
+            }
+          },
+          {
+            "frame": 0.05,
+            "value": {
+              "__uuid__": "16f67545-e141-444a-aa22-1bf0dcf2f60b"
+            }
+          },
+          {
+            "frame": 0.06666666666666667,
+            "value": {
+              "__uuid__": "dd9ffdb3-6445-4d1f-a6ae-38779c6c90ea"
+            }
+          },
+          {
+            "frame": 0.08333333333333333,
+            "value": {
+              "__uuid__": "d03ebb25-2b44-4c97-9d12-505b1ebabd87"
+            }
+          },
+          {
+            "frame": 0.1,
+            "value": {
+              "__uuid__": "79383611-5027-43cb-b52d-84fa2a407bb7"
+            }
+          },
+          {
+            "frame": 0.11666666666666667,
+            "value": {
+              "__uuid__": "5cb4e977-2ab4-4d99-9520-0d90986e7adb"
+            }
+          },
+          {
+            "frame": 0.13333333333333333,
+            "value": {
+              "__uuid__": "eb2ae8d3-a856-4b4f-923f-72cb84909072"
+            }
+          },
+          {
+            "frame": 0.15,
+            "value": {
+              "__uuid__": "b24e7a93-b0c4-480f-b045-ef22ff93441a"
+            }
+          },
+          {
+            "frame": 0.16666666666666666,
+            "value": null
+          }
+        ]
+      }
+    }
+  },
+  "events": [
+    {
+      "frame": 0.16666666666666666,
+      "func": "destroyItem",
+      "params": []
+    }
+  ]
+}
