@@ -21,22 +21,13 @@ export default class NewClass extends cc.Component {
     bulletPrefab: cc.Prefab = null;
 
     @property(cc.Node)
-    listBullet: cc.Node = null;
-
-    @property(cc.Node)
     bangDan: cc.Node = null;
-
-    @property(cc.Node)
-    bangDan2: cc.Node = null;
 
     @property(cc.Node)
     khoabang: cc.Node = null;
 
     @property(cc.Node)
     gun: cc.Node = null;
-
-    @property(cc.Node)
-    gun2: cc.Node = null;
 
     @property(cc.Node)
     chotAt: cc.Node = null;
@@ -48,26 +39,7 @@ export default class NewClass extends cc.Component {
     co: cc.Node = null;
 
     @property(cc.Node)
-    chot2: cc.Node = null;
-
-    @property(cc.Node)
-    chotAtGun2: cc.Node = null;
-
-    @property(cc.Node)
-    khoaNongGun2: cc.Node = null;
-
-    @property(cc.Node)
-    coGun2: cc.Node = null;
-
-    @property(cc.Node)
-    chot2Gun2: cc.Node = null;
-
-
-    @property(cc.Node)
     smoke: cc.Node = null;
-
-    @property(cc.Node)
-    smokeGun2: cc.Node = null;
 
     @property(cc.Label)
     bulletNumLabel: cc.Label = null;
@@ -136,10 +108,9 @@ export default class NewClass extends cc.Component {
     // onLoad () {}
 
     start() {
-        let posHopDan = cc.v3(14,-40);
+        this.reloadBtnEvent();
         cc.audioEngine.play(this.bgSound, true, 0.35);
-        this.reloadBullet();
-        // this.moveHand(cc.v3(109, -277), cc.v3(109, -127));
+        this.moveHand(cc.v3(130, -220), cc.v3(130, -70));
 
     }
     moveHand(pos1, pos2) {
@@ -148,218 +119,130 @@ export default class NewClass extends cc.Component {
         ).start();
     }
     reloadBtnEvent() {
+        this.reloadBtn.node.on(cc.Node.EventType.TOUCH_MOVE, this.checkReloadFun, this);
+        this.reloadBtn.node.on(cc.Node.EventType.TOUCH_END, this.endReloadEvent, this);
     }
     modeBtnEvent() {
     }
     lockBtnEvent() {
-
+        this.lockBtn.node.on(cc.Node.EventType.TOUCH_MOVE, this.checkLockFun, this);
+        this.lockBtn.node.on(cc.Node.EventType.TOUCH_END, this.endLockEvent, this);
     }
     checkReloadFun(event) {
+        let startPoint = event.touch._startPoint;
+        let prevPoint = event.touch._prevPoint;
+        if (prevPoint.y - startPoint.y > 0 && Math.abs(prevPoint.x - startPoint.x) < 50) {
+            this.checkTouch = true;
+        }
     }
-    endReloadEvent() {
+    endReloadEvent(event) {
+        if (this.checkTouch) {
+            this.checkTouch = false;
+            this.reloadBtn.node.off(cc.Node.EventType.TOUCH_MOVE);
+            this.reloadBtn.node.off(cc.Node.EventType.TOUCH_END);
+            this.reloadBullet();
+
+        }
     }
     checkModeFun(event) {
     }
     endModeEvent(event) {
     }
     checkLockFun(event) {
+        let startPoint = event.touch._startPoint;
+        let prevPoint = event.touch._prevPoint;
+        if (startPoint.x - prevPoint.x > 0 && Math.abs(prevPoint.y - startPoint.y) < 50) {
+            this.checkTouch = true;
+        }
     }
     endLockEvent(event) {
+        if (this.checkTouch) {
+            this.checkTouch = false;
+            this.lockBtn.node.off(cc.Node.EventType.TOUCH_MOVE);
+            this.lockBtn.node.off(cc.Node.EventType.TOUCH_END);
+            this.openLock2();
+        }
     }
     chooseItem(event, customEventData) { // chon item
 
     }
     reloadBullet() {
-        // if (this.checkShoot == 1) this.shootBtn.node.active = true;
         this.hand.stopAllActions();
         this.hand.active = false;
-        // if (this.checkShoot == 0) {
-            // this.reloadBtn.node.active = false;;
-            this.bulletNum = 5;
-            cc.tween(this.bangDan).to(0.25,{angle:15}).to(0.25, { position:cc.v3(-18,25) }).to(0.25,{angle:0}).call(() => {
-                this.bulletNumLabel.string = `${this.bulletNum}/30`;
-                cc.audioEngine.play(this.reloadSound, false, 1);
-            }).start();
-            cc.tween(this.gun).delay(0.75).to(0.15, { angle: 1 }).to(0.15, { angle: 0 }).delay(0.5).call(()=>{
-                this.openLock2();
-            }).start();
-        //     cc.tween(this.khoabang).delay(0.25).to(0.2, { angle: -50 }).call(() => {
-        //         if (this.checkShoot == 0) {
-        //             this.modeBtnEvent();
-        //             this.hand.active = true;
-        //             this.moveHand(cc.v3(-115, 0), cc.v3(-115, -50));
-        //             // this.hand.setPosition(cc.v3(-95, -40));
-        //         }
-        //     }).start();
-        // }
-        // else {
-        //     // this.hand.active = false;
-        //     this.reloadBtnGun2.node.active = false;
-        //     this.bulletNum = 20;
-        //     cc.tween(this.bangDan2).to(0.25, { position:cc.v3(-22,25) }).call(() => {
-        //         this.bulletNumLabel.string = `${this.bulletNum}/20`;
-        //         cc.audioEngine.play(this.reloadSound, false, 1);
-        //     }).start();
-        //     cc.tween(this.gun2).delay(0.26).to(0.15, { angle: 3 }).to(0.15, { angle: 0 }).call(() => {
-        //         if (this.checkShoot == 1) {
-        //             this.modeBtnGun2.enabled = true;
-        //             this.hand.active = true;
-        //             this.moveHand(cc.v3(-80, 30), cc.v3(-80, -15));
-        //             // this.hand.setPosition(cc.v3(-110, 15));
-        //         }
-        //     }).start()
-        // }
+        this.bulletNum = 5;
+        cc.tween(this.bangDan).to(0.25, { angle: 15 }).to(0.25, { position: cc.v3(-18, 25) }).to(0.25, { angle: 0 }).call(() => {
+            this.bulletNumLabel.string = `${this.bulletNum}/30`;
+            cc.audioEngine.play(this.reloadSound, false, 1);
+        }).start();
+        cc.tween(this.gun).delay(0.75).to(0.15, { angle: 1 }).to(0.15, { angle: 0 }).delay(0.1).call(() => {
+            // this.openLock2();
+            this.lockBtn.node.active = true;
+            this.lockBtnEvent();
+            this.hand.active = true;
+            this.moveHand(cc.v3(80, 20), cc.v3(-60, 20));
+        }).start();
 
 
     }
     openLock() {
-        // this.hand.stopAllActions();
-        // this.hand.active = false;
-        // if (this.checkShoot == 0) {
-        //     this.modeBtn.node.active = false;
-            cc.audioEngine.play(this.modeSound, false, 1);
-            cc.tween(this.chotAt).to(0.25, { angle: 40 }).call(() => {
-                this.lockBtn.enabled = true;
-                this.hand.active = true;
-                this.moveHand(cc.v3(222, 82), cc.v3(112, 82));
-                this.hand.setPosition(cc.v3(232, 82));
+        cc.audioEngine.play(this.modeSound, false, 1);
+        cc.tween(this.chotAt).to(0.25, { angle: 40 }).call(() => {
+            this.lockBtn.enabled = true;
+            this.hand.active = true;
+            this.moveHand(cc.v3(222, 82), cc.v3(112, 82));
+            this.hand.setPosition(cc.v3(232, 82));
 
-            }).start();
-        // }
-        // else {
-        //     this.hand.active = false;
-        //     this.modeBtnGun2.node.active = false;
-        //     cc.audioEngine.play(this.modeSound, false, 1);
-        //     cc.tween(this.chotAtGun2).to(0.25, { angle: -15 }).call(() => {
-        //         this.lockBtnEvent();
-        //         this.hand.active = true;
-        //         this.moveHand(cc.v3(50, 30), cc.v3(-50, 30));
-        //         //this.hand.setPosition(cc.v3(0, 30));
-
-        //     }).start();
-        // }
+        }).start();
 
     }
 
     openLock2() {
-        // this.hand.stopAllActions();
-        // this.hand.active = false;
-        // if (this.checkShoot == 0) {
-            // this.lockBtn.node.active = false;
-            cc.audioEngine.play(this.nongSound, false, 1);
-            cc.tween(this.khoaNong).to(0.15, { x: -62 }).to(0.1, { x: 42 }).call(() => {
-                this.shootBtn.node.active = true;
-                this.hand.active = true;
-                this.hand.getComponent(cc.Animation).play('hand');
-                this.hand.setPosition(cc.v3(-25, -32));
-            }).start();
-        // }
-        // else {
-        //     this.hand.active = false;
-        //     this.lockBtnGun2.node.active = false;
-        //     cc.audioEngine.play(this.nongSound, false, 1);
-        //     cc.tween(this.chot2Gun2).to(0.1, { x: -80 }).to(0.1, { x: -2 }).call(() => {
-        //         this.shootBtn.node.active = true;
-        //         this.hand.active = true;
-        //         this.hand.getComponent(cc.Animation).play('hand');
-        //         this.hand.setPosition(cc.v3(-106, -34));
-        //     }).start();
-        // }
+        this.hand.stopAllActions();
+        this.hand.active = false;
+        cc.audioEngine.play(this.nongSound, false, 1);
+        cc.tween(this.khoaNong).to(0.15, { x: -62 }).to(0.1, { x: 42 }).call(() => {
+            this.shootBtn.node.active = true;
+            this.hand.active = true;
+            this.hand.getComponent(cc.Animation).play('hand');
+            this.hand.setPosition(cc.v3(-25, -32));
+        }).start();
 
     }
 
     shoot(gunNum: number) {
         this.hand.active = false;
         // if (this.checkShoot == 0) {
-            if (this.bulletNum > 0) {
-                cc.tween(this.gun)
-                    .call(() => {
-                        this.shootBtn.node.active = false;
-                        cc.tween(this.co).to(0.05, { angle: -20 }).to(0.05, { angle: 0 }).start();
-                    })
-                    .to(0.05, { x: -20, angle: 2 }).call(() => {
-                        cc.audioEngine.play(this.gunFire, false, 1);
-                        this.addShootEffect(this.gun, cc.v3(420, 33));
-                        this.shootBullet(cc.v3(430, 33));
-                        cc.tween(this.khoaNong).to(0.075, { x: -62 }).to(0.075, { x: 42 }).call(()=>{
-                            this.smoke.getComponent(cc.Animation).play('smoke_brown');
-                            this.removeBullet(cc.v3(0, 46));
-                        }).start();
-                        // cc.tween(this.chot2).delay(0.05).to(0.05, { x: 52 }).to(0.05, { x: -12 }).call(() => {
-                            
-                        // }).start();
-                        this.bulletNum--;
-                        this.bulletNumLabel.string = `${this.bulletNum}/5`
-                        if (this.bulletNum == 0) {
-                            this.checkShoot += 1;
-                            // if (this.checkShoot == 0) {
-                                this.showScene2();
-                            // }
-                            // else {
-                            //     // cc.tween(this.bangDan).call(() => {
-                            //     //     this.bangDan.getChildByName('dan').active = false;
-                            //     //     cc.tween(this.khoabang).delay(0.25).to(0.2, { angle: -20 }).start();
-                            //     // }).delay(0.25).to(0.25, { y: -600 }).call(() => {
-                            //     //     this.bangDan.getChildByName('dan').active = true;
-                            //     // }).to(0.25, { y: -200 }).call(() => {
-                            //     //     this.shootBtn.node.active = false;
-                            //     //     this.reloadBtn.enabled = true;
-                            //     //     this.hand.active = true;
-                            //     //     this.hand.setPosition(cc.v3(70, -88));
-                            //     // }).start();
-                            //     this.changeGun();
-                            // }
-                        }
-                    })
-                    .to(0.05, { x: 0, angle: 0 })
-                    .call(() => {
-                        this.shootBtn.node.active = true;
-                    })
-                    .start();
-            }
-
-
-        // }
-        // else {
-        //     if (this.bulletNum > 0) {
-        //         cc.tween(this.gun2)
-        //             .call(() => {
-        //                 this.shootBtn.node.active = false;
-        //                 cc.tween(this.coGun2).to(0.05, { angle: -12 }).to(0.05, { angle: 0 }).start();
-        //             })
-        //             .to(0.05, { x: -20, angle: 1 }).call(() => {
-        //                 cc.audioEngine.play(this.gun2FireSound, false, 1);
-        //                 this.addShootEffect(this.gun2, cc.v3(485, 40));
-        //                 this.shootBullet(cc.v3(545, 45));
-        //                 // cc.tween(this.khoaNong).to(0.075, { x: 83 }).to(0.075, { x: 173 }).start();
-        //                 cc.tween(this.chot2Gun2).delay(0.05).to(0.05, { x: -85 }).to(0.05, { x: -2 }).call(() => {
-        //                     this.smokeGun2.getComponent(cc.Animation).play('smoke_brown');
-        //                     this.removeBullet(cc.v3(-120, 83));
-        //                 }).start();
-        //                 this.bulletNum--;
-        //                 this.bulletNumLabel.string = `${this.bulletNum}/20`
-        //                 if (this.bulletNum == 0) {
-        //                     this.checkShoot += 1;
-        //                     if (this.checkShoot == 2) {
-        //                         this.showScene2();
-        //                     }
-        //                     else {
-        //                         this.changeGun();
-        //                     }
-        //                 }
-        //             })
-        //             .to(0.05, { x: 0, angle: 0 })
-        //             .call(() => {
-        //                 this.shootBtn.node.active = true;
-        //             })
-        //             .start();
-        //     }
-        // }
+        if (this.bulletNum > 0) {
+            cc.tween(this.gun)
+                .call(() => {
+                    this.shootBtn.node.active = false;
+                    cc.tween(this.co).to(0.05, { angle: -20 }).to(0.05, { angle: 0 }).start();
+                })
+                .to(0.05, { x: -20, angle: 2 }).call(() => {
+                    cc.audioEngine.play(this.gunFire, false, 1);
+                    this.addShootEffect(this.gun, cc.v3(420, 33));
+                    this.shootBullet(cc.v3(430, 33));
+                    cc.tween(this.khoaNong).to(0.075, { x: -62 }).to(0.075, { x: 42 }).call(() => {
+                        this.smoke.getComponent(cc.Animation).play('smoke_brown');
+                        this.removeBullet(cc.v3(0, 46));
+                    }).start();
+                    this.bulletNum--;
+                    this.bulletNumLabel.string = `${this.bulletNum}/5`
+                    if (this.bulletNum == 0) {
+                        this.checkShoot += 1;
+                        this.showScene2();
+                    }
+                })
+                .to(0.05, { x: 0, angle: 0 })
+                .call(() => {
+                    this.shootBtn.node.active = true;
+                })
+                .start();
+        }
     }
     changeGun() {
         this.reloadBtnEvent();
         this.gun.active = false;
-        this.gun2.active = true;
         this.hand.active = true;
         this.hand.setPosition(cc.v3(-18, -151));
         this.moveHand(cc.v3(-18, -181), cc.v3(-18, -51));
@@ -399,18 +282,5 @@ export default class NewClass extends cc.Component {
         bullet.setPosition(pos);
         bullet.getComponent(cc.Animation).play('bullet_down');
     }
-    // reloadBullet() {
-    //     if (this.checkReload) {
-    //         this.scheduleOnce(() => {
-    //             this.shootBtn.enabled = true;
-    //             this.checkShoot = true;
-    //             this.bulletNum = 5;
-    //             this.checkReload = false;
-    //             this.listBullet.children.forEach(bullet => {
-    //                 bullet.active = true;
-    //             });
-    //         }, 0.5)
-    //     }
-    // }
 
 }
